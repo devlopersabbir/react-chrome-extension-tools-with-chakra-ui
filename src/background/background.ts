@@ -59,5 +59,20 @@ setInterval(() => {
     chrome.action.setBadgeText({
       text: `${numberOfNotification === 0 ? "" : numberOfNotification}`
     })
+
+  } else {
+    console.log('No notification!')
   }
 }, 5000)
+
+// chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
+//   if (request.message.type === "playAudio") {
+//     const audio = new Audio(request.audioFilePath);
+
+//     // Play the audio
+//     audio.play();
+
+//     // Send a response to the content script
+//     sendResponse('Audio played successfully.');
+//   }
+// })
